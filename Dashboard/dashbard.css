@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --royal-blue: #4169E1;
+    --white: #ffffff;
+    --light-gray: #f9f9f9;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+}
+
+
+
+.navbar {
+    width: 100%;
+
+    background-color: var(--royal-blue); 
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 20px;
+    height: 70px; 
+
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+
+.navbar-brand {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.6rem; 
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.8); 
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 30px; 
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 5px 0; 
+    
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.3s ease-out; 
+}
+
+.nav-link:hover {
+    color: var(--light-gray);
+}
+
+.nav-link:hover::after,
+.nav-link.current::after {
+    width: 100%; 
+}
+
+
+.nav-link.current {
+    font-weight: 600;
+}
+
+
+.navbar-cta {
+    background-color: var(--white);
+    color: var(--royal-blue); 
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-cta:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        justify-content: space-around;
+        height: 60px;
+    }
+
+    .navbar-menu {
+        display: none; 
+    }
+
+    .navbar-cta {
+        font-size: 0.9rem;
+        padding: 6px 14px;
+    }
+}
